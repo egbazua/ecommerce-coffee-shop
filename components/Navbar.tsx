@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import React from 'react'
 import MenuList from './MenuList'
 import MenuMobileList from './MenuMobileList'
+import ToggleTheme from './ToggleTheme'
 
 const Navbar = () => {
   const router = useRouter()
@@ -24,6 +25,7 @@ const Navbar = () => {
         <ShoppingCart strokeWidth={1} className='cursor-pointer' onClick={() => router.push('/cart')} />
         <Heart strokeWidth={1} className='cursor-pointer' onClick={() => router.push('/loved-products')} />
         <User strokeWidth={1} className='cursor-pointer' />
+        <ToggleTheme />
       </div>
     </div>
   )
