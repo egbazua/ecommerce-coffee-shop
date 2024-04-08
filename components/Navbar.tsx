@@ -4,6 +4,7 @@ import { Heart, ShoppingCart, User } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import React from 'react'
 import MenuList from './MenuList'
+import MenuMobileList from './MenuMobileList'
 
 const Navbar = () => {
   const router = useRouter()
@@ -17,7 +18,7 @@ const Navbar = () => {
         <MenuList />
       </div>
       <div className='flex sm:hidden'>
-        <p>items menu mobile</p>
+        <MenuMobileList />
       </div>
       <div className='flex items-center justify-between gap-2 sm:gap-7'>
         <ShoppingCart strokeWidth={1} className='cursor-pointer' onClick={() => router.push('/cart')} />
