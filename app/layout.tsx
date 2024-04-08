@@ -8,7 +8,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 const urbanist = Urbanist({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Coffee e-commerce",
+  title: "Coffee Shop",
   description: "Welcome to my e-commerce from egbazua",
 };
 
