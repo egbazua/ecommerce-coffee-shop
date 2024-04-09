@@ -5,6 +5,7 @@ import { ResponseType } from "@/types/response"
 import { useParams } from "next/navigation"
 import SkeletonProduct from "./components/SkeletonProduct"
 import CarouselProduct from "./components/CarouselProduct"
+import InfoProduct from "./components/InfoProduct"
 
 const Page = () => {
   const params = useParams()
@@ -21,7 +22,7 @@ const Page = () => {
           <CarouselProduct images={result[0].attributes.images} />
         </div>
         <div className="sm:px-12">
-          <p>Info product</p>
+          <InfoProduct product={result[0]} />
         </div>
       </div>
     </div>
