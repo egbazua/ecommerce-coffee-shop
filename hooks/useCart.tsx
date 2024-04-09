@@ -2,7 +2,6 @@ import { create } from 'zustand'
 import { persist, createJSONStorage } from 'zustand/middleware'
 import { toast } from '@/components/ui/use-toast'
 import { ProductType } from "@/types/product"
-import { Item } from '@radix-ui/react-navigation-menu'
 
 interface CartStore {
   items: ProductType[],
@@ -19,7 +18,7 @@ export const useCart = create(persist<CartStore>((set, get) => ({
 
     if (existingItem) {
       return toast({
-        title: "El producto ya existe en el carrito",
+        title: "El producto ya existe en el carrito.",
         variant: "destructive"
       })
     }
@@ -29,7 +28,7 @@ export const useCart = create(persist<CartStore>((set, get) => ({
     })
 
     toast({
-      title: "Producto añadido al carrito 🎉"
+      title: "Producto añadido al carrito 🎉."
     })
   },
   removeItem: (id: number) => {
