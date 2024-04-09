@@ -20,7 +20,7 @@ const Page = () => {
         <div>
           {
             items.length === 0 && (
-              <p>No hay productos en el carrito</p>
+              <p>No hay productos en el carrito.</p>
             )
           }
           <ul>

@@ -33,6 +33,10 @@ export const useCart = create(persist<CartStore>((set, get) => ({
   },
   removeItem: (id: number) => {
     set({items: [...get().items.filter((item) => item.id !== id)]})
+
+    toast({
+      title: "Producto eliminado del carrito ❌."
+    })
   },
   removeAll: () => set({ items: [] })
 }), {
