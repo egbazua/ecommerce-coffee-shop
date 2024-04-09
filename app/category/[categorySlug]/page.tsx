@@ -27,7 +27,7 @@ const Page = () => {
       <Separator />
       <div className='sm:flex sm:justify-between'>
         <FiltersControlsCategory />
-        <div className='grid gap-5 mt-8 md:grid-cols-3 md:gap-10'>
+        <div className='grid gap-5 mt-8 sm:grid-cols-2 md:grid-cols-3 md:gap-10'>
           {
             loading && (
               <SkeletonSchema grid={3} />
