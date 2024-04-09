@@ -11,7 +11,6 @@ import ProductCard from './components/ProductCard'
 import { ProductType } from '@/types/product'
 
 const Page = () => {
-  const router = useRouter()
   const params = useParams()
   const { categorySlug } = params
   const [filterOrigin, setFilterOrigin] = useState<string>('')
