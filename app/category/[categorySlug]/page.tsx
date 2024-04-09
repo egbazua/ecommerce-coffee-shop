@@ -44,6 +44,11 @@ const Page = () => {
               ))
             )
           }
+          {
+            (filteredProducts !== null && !loading && filteredProducts.length === 0) && (
+              <p>No hay productos con este filtro.</p>
+            ) 
+          }
         </div>
       </div>
     </div>
