@@ -6,6 +6,9 @@ import { ResponseType } from '@/types/response'
 import { useParams, useRouter } from 'next/navigation'
 import React from 'react'
 import FiltersControlsCategory from './components/FiltersControlsCategory'
+import SkeletonSchema from '@/components/SkeletonSchema'
+import ProductCard from './components/ProductCard'
+import { ProductType } from '@/types/product'
 
 const Page = () => {
   const router = useRouter()
@@ -24,6 +27,20 @@ const Page = () => {
       <Separator />
       <div className='sm:flex sm:justify-between'>
         <FiltersControlsCategory />
+        <div className='grid gap-5 mt-8 md:grid-cols-3 md:gap-10'>
+          {
+            loading && (
+              <SkeletonSchema grid={3} />
+            )
+          }
+          {
+            (result !== null && !loading) && (
+              result.map((product: ProductType) => (
+                <ProductCard key={product.id} product={product} />
+              ))
+            )
+          }
+        </div>
       </div>
     </div>
   )
