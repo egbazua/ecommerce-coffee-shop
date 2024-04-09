@@ -2,6 +2,7 @@
 
 import { useLovedProducts } from '@/hooks/useLovedProducts'
 import React from 'react'
+import LovedItemProduct from './components/LovedItemProduct'
 
 const Page = () => {
   const { lovedItems } = useLovedProducts()
@@ -19,7 +20,7 @@ const Page = () => {
           <ul>
             {
               lovedItems.map((item) => (
-                <p key={item.id}>{item.attributes.productName}</p>
+                <LovedItemProduct key={item.id} product={item} />
               ))
             }
           </ul>
