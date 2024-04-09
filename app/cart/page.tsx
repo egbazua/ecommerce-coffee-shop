@@ -10,7 +10,7 @@ import { loadStripe } from '@stripe/stripe-js'
 import { makePaymentRequest } from '@/api/payment'
 
 const Page = () => {
-  const { items } = useCart()
+  const { items, removeAll } = useCart()
   const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY || '')
 
   const prices = items.map((product => product.attributes.price))
@@ -28,6 +28,7 @@ const Page = () => {
         sessionId: response.data.stripeSession.id
       })
 
+      removeAll()
     } catch (error) {
       console.error(error)
     }
