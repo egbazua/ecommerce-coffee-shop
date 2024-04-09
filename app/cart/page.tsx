@@ -5,6 +5,7 @@ import { Separator } from '@/components/ui/separator'
 import { useCart } from '@/hooks/useCart'
 import { formatPrice } from '@/lib/formatPrice'
 import React from 'react'
+import CartItem from './components/CartItem'
 
 const Page = () => {
   const { items, removeAll } = useCart()
@@ -14,7 +15,7 @@ const Page = () => {
 
   return (
     <div className='max-w-6xl px-4 py-16 mx-auto sm:px-6 lg:px-8'>
-      <h1 className='mb-5 text-3xl font-bold'>Shopping cart</h1>
+      <h1 className='mb-5 text-3xl font-bold'>Carrito de compras</h1>
       <div className='grid sm:grid-cols-2 sm:gap-5'>
         <div>
           {
@@ -25,7 +26,7 @@ const Page = () => {
           <ul>
             {
               items.map((item) => (
-                <p key={item.id}>item</p>
+                <CartItem key={item.id} product={item} />
               ))
             }
           </ul>
