@@ -33,14 +33,14 @@ const Page = () => {
         </div>
         <div className='max-w-xl'>
             <div className='p-6 rounded-lg bg-slate-100'>
-              <p className='mb-3 text-lg font-semibold'>Order summary</p>
+              <p className='mb-3 text-lg font-semibold dark:text-black'>Order summary</p>
               <Separator />
-              <div className='flex justify-between gap-5 my-4'>
+              <div className='flex justify-between gap-5 my-4 dark:text-black'>
                 <p>Order total</p>
                 <p>{formatPrice(totalPrice)}</p>
               </div>
               <div className='flex items-center justify-center w-full mt-3'>
-                <Button className='w-full' onClick={() => console.log("buy")}>Comprar</Button>
+                <Button className='w-full dark:bg-black dark:text-white' onClick={() => console.log("buy")}>Comprar</Button>
               </div>
             </div>
         </div>
