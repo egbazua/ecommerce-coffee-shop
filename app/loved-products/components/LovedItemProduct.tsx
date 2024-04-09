@@ -17,6 +17,11 @@ const LovedItemProduct = ({ product }: LovedItemProductProps) => {
   const { removeLovedItem } = useLovedProducts()
   const { addItem } = useCart()
 
+  const addToCheckout = () => {
+    addItem(product)
+    removeLovedItem(product.id)
+  }
+
   return (
     <li className='flex py-6 border-b'>
       <div onClick={() => router.push(`/product/${product.attributes.slug}`)}>
@@ -38,7 +43,7 @@ const LovedItemProduct = ({ product }: LovedItemProductProps) => {
               {product.attributes.origin}
             </p>
           </div>
-          <Button className='mt-5 rounded-full'>Añadir al carrito</Button>
+          <Button className='mt-5 rounded-full' onClick={addToCheckout}>Añadir al carrito</Button>
         </div>
         <div>
           <button className={cn('rounded-full flex items-center justify-center bg-white border shadow-md p-1 hover:scale-110 transition')}>
