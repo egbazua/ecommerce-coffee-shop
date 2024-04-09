@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import { useCart } from '@/hooks/useCart'
+import { useLovedProducts } from '@/hooks/useLovedProducts'
 import { formatPrice } from '@/lib/formatPrice'
 import { ProductType } from '@/types/product'
 import { Heart } from 'lucide-react'
@@ -12,6 +13,7 @@ export type InfoProductProps = {
 
 const InfoProduct = ({ product }: InfoProductProps) => {
   const { addItem } = useCart()
+  const { addLovedItem } = useLovedProducts()
 
   return (
     <div className='px-6'>
@@ -35,7 +37,7 @@ const InfoProduct = ({ product }: InfoProductProps) => {
         <Heart 
           width={30}
           strokeWidth={1}
-          className='transition duration-300 cursor-pointer hover:fill-black' onClick={() => console.log("Add to loved products")}
+          className='transition duration-300 cursor-pointer hover:fill-black' onClick={() => addLovedItem(product)}
         />
       </div>
     </div>
